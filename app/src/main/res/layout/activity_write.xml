@@ -10,14 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="작성자를 기입하세요"/>
+        android:hint="작성자를 기입하세요"/>
 
     <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="제목을 기입하세요"/>
+        android:hint="제목을 기입하세요"/>
 
 
     <EditText
@@ -25,7 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
-        android:text="내용을 기입하세요"/>
+        android:hint="내용을 기입하세요"
+        android:gravity="top"/>
 
     <LinearLayout
         android:layout_width="match_parent"

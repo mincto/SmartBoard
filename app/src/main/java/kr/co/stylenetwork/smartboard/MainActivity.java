@@ -48,8 +48,7 @@ public class MainActivity extends FragmentActivity{
 
     public void btnClick(View view){
         switch (view.getId()){
-            case R.id.bt_regist:regist();break;
-            case R.id.bt_list:showPage(0);break;
+            case R.id.bt_write:regist();break;
         }
     }
 }

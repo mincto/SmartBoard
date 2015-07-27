@@ -5,6 +5,14 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <Button
+        android:id="@+id/bt_write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="글쓰기"
+        android:layout_gravity="right"
+        android:onClick="btnClick"/>
+
     <!--구글에서 제작한 페이지 처리 위젯을 사용해본다-->
     <kr.co.stylenetwork.smartboard.MyViewPager
         android:id="@+id/viewPager"
