@@ -31,13 +31,17 @@ public class MyAsyncTask extends AsyncTask<Void , Void , Integer>{
         * 웹서버와의 통신!!
         * */
     protected Integer doInBackground(Void... params) {
-        boolean result=writeActivity.connectServer();
+        writeActivity.init();/*접속 준비*/
+        boolean result=writeActivity.connectServer();/*접속시도*/
+        int resultCode=0;
+
         if(result){
             Log.d(TAG, "접속 성공");
+            resultCode=writeActivity.sendData();
         }else{
             Log.d(TAG, "접속 실패");
         }
-        return null;
+        return resultCode;
     }
 
     /*doInBackground 메서드 수행중에 호출되는 메서드 */
@@ -51,8 +55,13 @@ public class MyAsyncTask extends AsyncTask<Void , Void , Integer>{
         * 서버와의 통신 작업이 끝난후 그 결과물을 UI에 반영하자..당연히 메인쓰레드에
         * 의해 호출됨
         * */
-    protected void onPostExecute(Integer integer) {
-        super.onPostExecute(integer);
+    protected void onPostExecute(Integer resultCode) {
+        /*
+        * 현재 보고 있는 액티비티 닫고, MainActivity를 갱신시킨다
+        * */
+        if(resultCode==1){
+            writeActivity.finish();
+        }
     }
 }
 
